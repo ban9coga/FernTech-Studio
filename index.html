@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="id" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FernTech Studio | Studio Teknologi Digital</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -186,7 +187,8 @@
       }
       @media (prefers-reduced-motion: reduce) {
         .particle,
-        .reveal {
+        .reveal,
+        .float-slow {
           animation: none;
           transition: none;
         }
@@ -197,16 +199,8 @@
     <header class="glass sticky top-0 z-50 border-b border-slate-800/60 shadow-lg">
       <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 md:px-6">
         <a href="#home" class="flex items-center gap-3">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/20 text-primary shadow-glow">
-            <svg viewBox="0 0 64 64" class="h-7 w-7" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 18H42V28H22V34H40V44H14V18Z" stroke="#06B6D4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M34 18V44" stroke="#2563EB" stroke-width="3" stroke-linecap="round" />
-              <circle cx="14" cy="18" r="3" fill="#2563EB" />
-              <circle cx="42" cy="18" r="3" fill="#06B6D4" />
-              <circle cx="40" cy="44" r="3" fill="#06B6D4" />
-            </svg>
-          </div>
-          <span class="text-lg font-semibold tracking-wide">FernTech Studio</span>
+          <img src="assets/logo-nav.png" alt="FernTech Studio" class="h-9 w-auto md:h-10" />
+          <span class="sr-only">FernTech Studio</span>
         </a>
         <div class="hidden items-center gap-8 md:flex">
           <a class="nav-link text-sm text-slate-300 hover:text-white" href="#home">Beranda</a>
@@ -216,7 +210,7 @@
           <a class="nav-link text-sm text-slate-300 hover:text-white" href="#contact">Kontak</a>
           <a href="#contact" class="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-primary/90">Mulai Proyek</a>
         </div>
-        <button id="menuBtn" class="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-700/70 text-slate-200 transition hover:border-accent/70 md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <button id="menuBtn" class="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-700/70 text-slate-200 transition hover:border-accent/70 md:hidden" aria-label="Buka menu navigasi" aria-expanded="false">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -270,20 +264,11 @@
             <div class="relative rounded-3xl border border-slate-700/50 p-8">
               <div class="absolute -right-10 top-10 h-24 w-24 rounded-full bg-primary/30 blur-2xl"></div>
               <div class="absolute -left-8 bottom-6 h-20 w-20 rounded-full bg-accent/30 blur-2xl"></div>
-              <svg viewBox="0 0 320 320" class="h-full w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="20" y="20" width="280" height="280" rx="32" stroke="#1E293B" stroke-width="2" />
-                <path d="M70 90H190V120H110V150H180V180H70V90Z" stroke="#06B6D4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M170 90V180" stroke="#2563EB" stroke-width="8" stroke-linecap="round" />
-                <circle cx="70" cy="90" r="8" fill="#2563EB" />
-                <circle cx="190" cy="90" r="8" fill="#06B6D4" />
-                <circle cx="180" cy="180" r="8" fill="#06B6D4" />
-                <path d="M60 230H260M80 250H220" stroke="#1E293B" stroke-width="6" stroke-linecap="round" />
-                <circle cx="90" cy="230" r="6" fill="#2563EB" />
-                <circle cx="150" cy="230" r="6" fill="#06B6D4" />
-                <circle cx="210" cy="230" r="6" fill="#2563EB" />
-              </svg>
+              <div class="rounded-3xl border border-slate-800/70 bg-slate-950/50 p-6 shadow-glow">
+                <img src="assets/logo-nav.png" alt="Logo FernTech Studio" class="mx-auto w-full max-w-md" />
+              </div>
               <div class="mt-6 rounded-2xl border border-slate-700/60 bg-slate-900/60 p-5">
-                <p class="text-sm text-slate-300">Monogram sirkuit berpendar untuk identitas brand futuristik.</p>
+                <p class="text-sm text-slate-300">Identitas visual FernTech Studio dengan gaya sirkuit modern untuk brand teknologi yang profesional.</p>
               </div>
             </div>
           </div>
@@ -446,21 +431,22 @@
               <div class="flex items-center gap-3"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-primary/20 text-primary">*</span>Lokasi: Indonesia</div>
             </div>
           </div>
-          <form class="tech-card rounded-2xl p-6 reveal">
+          <form id="contactForm" class="tech-card rounded-2xl p-6 reveal">
             <div class="grid gap-4">
               <div>
                 <label class="text-sm text-slate-300" for="name">Nama</label>
-                <input id="name" type="text" class="mt-2 w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-4 py-3 text-sm text-white outline-none focus:border-accent/70" placeholder="Nama Anda" />
+                <input id="name" type="text" required class="mt-2 w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-4 py-3 text-sm text-white outline-none focus:border-accent/70" placeholder="Nama Anda" />
               </div>
               <div>
                 <label class="text-sm text-slate-300" for="email">Email</label>
-                <input id="email" type="email" class="mt-2 w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-4 py-3 text-sm text-white outline-none focus:border-accent/70" placeholder="anda@email.com" />
+                <input id="email" type="email" required class="mt-2 w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-4 py-3 text-sm text-white outline-none focus:border-accent/70" placeholder="anda@email.com" />
               </div>
               <div>
                 <label class="text-sm text-slate-300" for="message">Pesan</label>
-                <textarea id="message" rows="4" class="mt-2 w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-4 py-3 text-sm text-white outline-none focus:border-accent/70" placeholder="Ceritakan proyek Anda"></textarea>
+                <textarea id="message" rows="4" required class="mt-2 w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-4 py-3 text-sm text-white outline-none focus:border-accent/70" placeholder="Ceritakan proyek Anda"></textarea>
               </div>
               <button type="submit" class="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5">Kirim</button>
+              <p id="formStatus" class="hidden text-sm text-accent" aria-live="polite"></p>
             </div>
           </form>
         </div>
@@ -471,8 +457,7 @@
       <div class="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-4 md:px-6">
         <div>
           <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/20 text-primary shadow-glow">FT</div>
-            <span class="text-lg font-semibold">FernTech Studio</span>
+            <img src="assets/logo-nav.png" alt="FernTech Studio" class="h-10 w-auto" />
           </div>
           <p class="mt-4 text-sm text-slate-400">Produk digital futuristik untuk tim yang ambisius.</p>
         </div>
@@ -497,9 +482,9 @@
         <div>
           <h4 class="text-sm font-semibold text-white">Sosial</h4>
           <div class="mt-3 flex gap-3 text-slate-400">
-            <a href="#" class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/70 hover:border-accent/70 hover:text-white" aria-label="LinkedIn">in</a>
-            <a href="#" class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/70 hover:border-accent/70 hover:text-white" aria-label="Instagram">ig</a>
-            <a href="#" class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/70 hover:border-accent/70 hover:text-white" aria-label="Dribbble">db</a>
+            <span class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/70 text-slate-500" aria-label="LinkedIn segera hadir">in</span>
+            <span class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/70 text-slate-500" aria-label="Instagram segera hadir">ig</span>
+            <span class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/70 text-slate-500" aria-label="Dribbble segera hadir">db</span>
           </div>
         </div>
       </div>
@@ -511,6 +496,9 @@
     <script>
       const menuBtn = document.getElementById("menuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
+      const contactForm = document.getElementById("contactForm");
+      const formStatus = document.getElementById("formStatus");
+      const whatsappNumber = "15552487070";
 
       menuBtn.addEventListener("click", () => {
         const isOpen = mobileMenu.classList.toggle("hidden");
@@ -536,6 +524,36 @@
         { threshold: 0.2 }
       );
       revealItems.forEach((item) => observer.observe(item));
+
+      contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!contactForm.reportValidity()) return;
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const whatsappMessage = encodeURIComponent(
+          [
+            "Halo FernTech Studio, saya ingin konsultasi proyek.",
+            "",
+            `Nama: ${name}`,
+            `Email: ${email}`,
+            `Pesan: ${message}`,
+          ].join("\n")
+        );
+
+        window.open(
+          `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
+          "_blank",
+          "noopener,noreferrer"
+        );
+
+        formStatus.textContent =
+          "WhatsApp sudah dibuka dengan pesan Anda. Silakan lanjutkan pengiriman di tab baru.";
+        formStatus.classList.remove("hidden");
+        contactForm.reset();
+      });
     </script>
   </body>
 </html>
