@@ -188,6 +188,7 @@
       .hero-mockup-slider {
         position: relative;
         overflow: hidden;
+        backdrop-filter: blur(14px);
       }
       .hero-mockup-track {
         display: flex;
@@ -199,7 +200,7 @@
       }
       .phone-mockup {
         position: relative;
-        width: min(100%, 320px);
+        width: min(100%, 258px);
         margin-inline: auto;
         border-radius: 2.6rem;
         padding: 0.85rem;
@@ -227,11 +228,172 @@
         background: #0f172a;
         aspect-ratio: 9 / 19.5;
       }
-      .phone-screen iframe {
-        width: 100%;
+      .app-shot {
+        display: flex;
         height: 100%;
-        border: 0;
-        pointer-events: none;
+        flex-direction: column;
+        background: linear-gradient(180deg, #f8fafc, #e2e8f0);
+      }
+      .app-shot.dark {
+        background: linear-gradient(180deg, #0f172a, #1e293b 55%, #6b3c1b);
+        color: #f8fafc;
+      }
+      .app-browser {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 2.1rem 0.85rem 0.9rem;
+        background: rgba(15, 23, 42, 0.82);
+      }
+      .app-shot.light .app-browser {
+        background: rgba(100, 116, 139, 0.82);
+      }
+      .app-browser-dot {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.9);
+      }
+      .app-url {
+        flex: 1;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.18);
+        padding: 0.45rem 0.75rem;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.95);
+      }
+      .app-shot.light .app-url {
+        background: rgba(255, 255, 255, 0.55);
+        color: #0f172a;
+      }
+      .app-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 0.85rem;
+      }
+      .app-card {
+        border-radius: 1.5rem;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        background: rgba(15, 23, 42, 0.28);
+        padding: 1rem;
+      }
+      .app-shot.light .app-card {
+        border-color: rgba(148, 163, 184, 0.26);
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .app-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        padding: 0.35rem 0.7rem;
+        font-size: 0.64rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .app-title {
+        margin-top: 0.9rem;
+        font-size: 1.7rem;
+        font-weight: 700;
+        line-height: 1.05;
+      }
+      .app-title .accent {
+        color: #fbbf24;
+      }
+      .app-subtitle {
+        margin-top: 0.8rem;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: rgba(226, 232, 240, 0.92);
+      }
+      .app-shot.light .app-subtitle {
+        color: #334155;
+      }
+      .app-button {
+        display: block;
+        width: 100%;
+        margin-top: 0.75rem;
+        border-radius: 9999px;
+        background: #fbbf24;
+        padding: 0.85rem 1rem;
+        text-align: center;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #0f172a;
+      }
+      .app-button.secondary {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #f8fafc;
+      }
+      .app-footer-mini {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        border-top: 1px solid rgba(148, 163, 184, 0.16);
+        padding-top: 0.9rem;
+        font-size: 0.68rem;
+        color: rgba(226, 232, 240, 0.72);
+      }
+      .app-login-badge {
+        display: flex;
+        width: 5rem;
+        height: 5rem;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        border-radius: 1.5rem;
+        background: linear-gradient(180deg, #1d4ed8, #1e3a8a);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #f8fafc;
+        box-shadow: inset 0 0 0 2px rgba(250, 204, 21, 0.45);
+      }
+      .app-field {
+        margin-top: 0.85rem;
+      }
+      .app-field-label {
+        font-size: 0.72rem;
+        color: #475569;
+      }
+      .app-input {
+        margin-top: 0.35rem;
+        width: 100%;
+        border-radius: 0.85rem;
+        border: 1px solid rgba(148, 163, 184, 0.28);
+        background: #fffbea;
+        padding: 0.8rem 0.85rem;
+        font-size: 0.9rem;
+        color: #0f172a;
+      }
+      .app-submit {
+        margin-top: 1rem;
+        width: 100%;
+        border-radius: 0.85rem;
+        background: #2563eb;
+        padding: 0.85rem 1rem;
+        text-align: center;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #f8fafc;
+      }
+      .app-link {
+        margin-top: 0.75rem;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #2563eb;
+      }
+      .app-legal {
+        margin-top: auto;
+        padding-top: 0.8rem;
+        text-align: center;
+        font-size: 0.72rem;
+        color: #64748b;
       }
       .mockup-badge {
         display: inline-flex;
@@ -296,7 +458,12 @@
         box-shadow: 0 0 18px rgba(34, 211, 238, 0.55);
       }
       .mockup-caption {
-        min-height: 8.5rem;
+        min-height: 0;
+      }
+      @media (min-width: 768px) {
+        .phone-mockup {
+          width: min(100%, 296px);
+        }
       }
       @media (prefers-reduced-motion: reduce) {
         .particle,
@@ -361,100 +528,160 @@
           <span class="particle" style="--dur: 9.2s; top: 70%; left: 78%"></span>
           <span class="particle" style="--dur: 7.2s; top: 80%; left: 12%"></span>
         </div>
-        <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 md:grid-cols-2 md:px-6 md:py-28">
-          <div class="reveal">
-            <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-accent/80">Studio Digital Futuristik</p>
-            <h1 class="text-4xl font-semibold leading-tight md:text-5xl">Transformasi Bisnis Kamu dengan Website & Sistem Digital Modern.</h1>
-            <p class="mt-5 text-lg text-slate-300">FernTech Studio membangun website modern, dashboard, dan platform digital untuk bisnis dan startup.</p>
-            <div class="mt-8 flex flex-wrap gap-4">
-              <a href="#services" class="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-slate-900 shadow-glowAccent transition hover:-translate-y-0.5">Lihat Layanan</a>
-              <a href="#contact" class="rounded-full border border-slate-600/70 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-accent/80 hover:text-white">Mulai Proyek</a>
+        <div class="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
+          <div class="grid gap-12 xl:grid-cols-[minmax(0,1.08fr)_minmax(320px,390px)] xl:items-start xl:gap-12">
+            <div class="reveal max-w-2xl xl:pt-4">
+              <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-accent/80">Studio Digital Futuristik</p>
+              <h1 class="max-w-[11ch] text-4xl font-semibold leading-[1.04] sm:text-5xl lg:text-[3.85rem]">Transformasi Bisnis Kamu dengan Website & Sistem Digital Modern.</h1>
+              <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 md:text-lg">FernTech Studio membangun website modern, dashboard, dan platform digital untuk bisnis dan startup.</p>
+              <div class="mt-8 flex flex-wrap gap-4">
+                <a href="#services" class="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-slate-900 shadow-glowAccent transition hover:-translate-y-0.5">Lihat Layanan</a>
+                <a href="#contact" class="rounded-full border border-slate-600/70 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-accent/80 hover:text-white">Mulai Proyek</a>
+              </div>
             </div>
-            <div class="mt-10 grid gap-5 text-sm text-slate-400 sm:grid-cols-2 xl:grid-cols-4">
-              <div class="rounded-2xl border border-slate-800/70 bg-slate-950/40 p-4">
-                <p class="text-lg font-semibold text-white">Performa Cepat</p>
-                <p class="mt-2">Website dan sistem dioptimalkan agar ringan, responsif, dan nyaman dipakai.</p>
-              </div>
-              <div class="rounded-2xl border border-slate-800/70 bg-slate-950/40 p-4">
-                <p class="text-lg font-semibold text-white">Solusi Custom</p>
-                <p class="mt-2">Setiap fitur disesuaikan dengan alur kerja, kebutuhan, dan target bisnis kamu.</p>
-              </div>
-              <div class="rounded-2xl border border-slate-800/70 bg-slate-950/40 p-4">
-                <p class="text-lg font-semibold text-white">Konsultasi Gratis</p>
-                <p class="mt-2">Diskusikan ide, kebutuhan, dan estimasi pengembangan tanpa biaya di awal.</p>
-              </div>
-              <div class="rounded-2xl border border-slate-800/70 bg-slate-950/40 p-4">
-                <p class="text-lg font-semibold text-white">Dukungan Penuh</p>
-                <p class="mt-2">Kami bantu dari tahap perencanaan, pengembangan, sampai maintenance setelah rilis.</p>
+            <div class="reveal xl:justify-self-end xl:pt-2">
+              <div class="hero-mockup-slider relative mx-auto max-w-[390px] rounded-[2rem] border border-slate-700/50 bg-slate-950/25 p-5 md:p-6">
+                <div class="absolute -right-10 top-10 h-24 w-24 rounded-full bg-primary/30 blur-2xl"></div>
+                <div class="absolute -left-8 bottom-6 h-20 w-20 rounded-full bg-accent/30 blur-2xl"></div>
+                <div id="heroMockupTrack" class="hero-mockup-track">
+                  <article class="hero-mockup-slide">
+                    <div class="rounded-3xl border border-slate-800/70 bg-slate-950/50 p-5 shadow-glow md:p-6">
+                      <div class="phone-mockup">
+                        <div class="phone-screen">
+                          <div class="app-shot dark">
+                            <div class="app-browser">
+                              <span class="app-browser-dot"></span>
+                              <div class="app-url">krbrms.vercel.app</div>
+                            </div>
+                            <div class="app-content">
+                              <div class="app-card">
+                                <span class="app-pill">No Live Event</span>
+                                <h4 class="app-title"><span class="accent">Pushbike</span> Race Platform</h4>
+                                <p class="app-subtitle">Realtime pushbike race management dengan monitoring hasil dan event secara cepat.</p>
+                                <span class="app-button">Eksplor Event</span>
+                                <span class="app-button secondary">Pantau Live</span>
+                              </div>
+                              <div class="app-footer-mini">
+                                <span>@yogafernands</span>
+                                <span>System by FernTech</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mockup-caption mt-4 rounded-2xl border border-slate-700/60 bg-slate-900/60 p-4 md:p-5">
+                      <span class="mockup-badge">
+                        <span class="mockup-dot"></span>
+                        Live Preview
+                      </span>
+                      <h3 class="mt-4 text-xl font-semibold text-white">Kancang Race Management System</h3>
+                      <p class="mt-3 text-sm leading-6 text-slate-300">Tampilan mobile untuk race management dengan monitoring hasil dan event secara real-time.</p>
+                    </div>
+                  </article>
+                  <article class="hero-mockup-slide">
+                    <div class="rounded-3xl border border-slate-800/70 bg-slate-950/50 p-5 shadow-glow md:p-6">
+                      <div class="phone-mockup">
+                        <div class="phone-screen">
+                          <div class="app-shot light">
+                            <div class="app-browser">
+                              <span class="app-browser-dot"></span>
+                              <div class="app-url">satpolpppdg.kesug.com</div>
+                            </div>
+                            <div class="app-content">
+                              <div class="app-card">
+                                <div class="app-login-badge">SP</div>
+                                <h4 class="mt-4 text-center text-xl font-semibold text-slate-900">Slip Gaji Satpol PP Kota Padang</h4>
+                                <div class="app-field">
+                                  <p class="app-field-label">NIP</p>
+                                  <div class="app-input">197003292010012001</div>
+                                </div>
+                                <div class="app-field">
+                                  <p class="app-field-label">Password</p>
+                                  <div class="app-input">................</div>
+                                </div>
+                                <div class="app-submit">Masuk</div>
+                                <div class="app-link">Lupa Password?</div>
+                              </div>
+                              <div class="app-legal">Copyright 2026 Satpol PP Kota Padang</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mockup-caption mt-4 rounded-2xl border border-slate-700/60 bg-slate-900/60 p-4 md:p-5">
+                      <span class="mockup-badge">
+                        <span class="mockup-dot"></span>
+                        Live Preview
+                      </span>
+                      <h3 class="mt-4 text-xl font-semibold text-white">Sistem Slip Gaji Satpol PP</h3>
+                      <p class="mt-3 text-sm leading-6 text-slate-300">Preview aplikasi slip gaji pegawai dengan alur login yang sederhana dan nyaman dipakai di mobile.</p>
+                    </div>
+                  </article>
+                </div>
+                <div class="mockup-nav mt-5">
+                  <div class="mockup-dots" id="heroMockupDots">
+                    <button type="button" class="is-active" aria-label="Tampilkan mockup 1"></button>
+                    <button type="button" aria-label="Tampilkan mockup 2"></button>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <button type="button" id="heroMockupPrev" class="mockup-arrow" aria-label="Mockup sebelumnya">
+                      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+                    <button type="button" id="heroMockupNext" class="mockup-arrow" aria-label="Mockup berikutnya">
+                      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="reveal">
-            <div class="hero-mockup-slider relative rounded-3xl border border-slate-700/50 p-8">
-              <div class="absolute -right-10 top-10 h-24 w-24 rounded-full bg-primary/30 blur-2xl"></div>
-              <div class="absolute -left-8 bottom-6 h-20 w-20 rounded-full bg-accent/30 blur-2xl"></div>
-              <div id="heroMockupTrack" class="hero-mockup-track">
-                <article class="hero-mockup-slide">
-                  <div class="rounded-3xl border border-slate-800/70 bg-slate-950/50 p-6 shadow-glow">
-                    <div class="phone-mockup">
-                      <div class="phone-screen">
-                        <iframe
-                          src="https://krbrms.vercel.app"
-                          title="Preview Kancang Race Management System"
-                          loading="lazy"
-                          referrerpolicy="no-referrer"
-                        ></iframe>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mockup-caption mt-6 rounded-2xl border border-slate-700/60 bg-slate-900/60 p-5">
-                    <span class="mockup-badge">
-                      <span class="mockup-dot"></span>
-                      Live Preview
-                    </span>
-                    <h3 class="mt-4 text-xl font-semibold text-white">Kancang Race Management System</h3>
-                    <p class="mt-3 text-sm text-slate-300">Mockup interaktif untuk sistem race management dengan tampilan mobile dan monitoring hasil secara real-time.</p>
-                  </div>
-                </article>
-                <article class="hero-mockup-slide">
-                  <div class="rounded-3xl border border-slate-800/70 bg-slate-950/50 p-6 shadow-glow">
-                    <div class="phone-mockup">
-                      <div class="phone-screen">
-                        <iframe
-                          src="https://satpolpppdg.kesug.com/"
-                          title="Preview Sistem Slip Gaji Pegawai"
-                          loading="lazy"
-                          referrerpolicy="no-referrer"
-                        ></iframe>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mockup-caption mt-6 rounded-2xl border border-slate-700/60 bg-slate-900/60 p-5">
-                    <span class="mockup-badge">
-                      <span class="mockup-dot"></span>
-                      Live Preview
-                    </span>
-                    <h3 class="mt-4 text-xl font-semibold text-white">Sistem Slip Gaji Satpol PP</h3>
-                    <p class="mt-3 text-sm text-slate-300">Preview aplikasi slip gaji pegawai dengan alur login yang sederhana, rapi, dan mudah digunakan di perangkat mobile.</p>
-                  </div>
-                </article>
-              </div>
-              <div class="mockup-nav mt-6">
-                <div class="mockup-dots" id="heroMockupDots">
-                  <button type="button" class="is-active" aria-label="Tampilkan mockup 1"></button>
-                  <button type="button" aria-label="Tampilkan mockup 2"></button>
+          <div class="reveal mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <div class="rounded-2xl border border-slate-800/70 bg-gradient-to-b from-slate-950/80 to-slate-900/55 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+              <div class="flex items-start gap-4">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 14l4-4 4 4 8-8" /></svg>
+                </span>
+                <div>
+                  <p class="text-lg font-semibold text-white">Performa Cepat</p>
+                  <p class="mt-2 text-sm leading-6 text-slate-400">Website dan sistem dioptimalkan agar loading tetap cepat, responsif, dan nyaman dipakai.</p>
                 </div>
-                <div class="flex items-center gap-3">
-                  <button type="button" id="heroMockupPrev" class="mockup-arrow" aria-label="Mockup sebelumnya">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </button>
-                  <button type="button" id="heroMockupNext" class="mockup-arrow" aria-label="Mockup berikutnya">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </button>
+              </div>
+            </div>
+            <div class="rounded-2xl border border-slate-800/70 bg-gradient-to-b from-slate-950/80 to-slate-900/55 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+              <div class="flex items-start gap-4">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-accent/15 text-accent">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12M6 12h12M7 7l10 10" /></svg>
+                </span>
+                <div>
+                  <p class="text-lg font-semibold text-white">Solusi Custom</p>
+                  <p class="mt-2 text-sm leading-6 text-slate-400">Fitur, alur, dan tampilan dibangun mengikuti kebutuhan bisnis yang kamu jalankan.</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-2xl border border-slate-800/70 bg-gradient-to-b from-slate-950/80 to-slate-900/55 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+              <div class="flex items-start gap-4">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primary">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h8M8 14h5M7 4h10l3 3v9a4 4 0 01-4 4H8a4 4 0 01-4-4V8a4 4 0 014-4z" /></svg>
+                </span>
+                <div>
+                  <p class="text-lg font-semibold text-white">Konsultasi Gratis</p>
+                  <p class="mt-2 text-sm leading-6 text-slate-400">Diskusikan ide, kebutuhan, dan estimasi pengerjaan lebih dulu tanpa biaya awal.</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-2xl border border-slate-800/70 bg-gradient-to-b from-slate-950/80 to-slate-900/55 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+              <div class="flex items-start gap-4">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-accent/15 text-accent">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 14a4 4 0 118 0c0 1.657-1.79 2.333-2.667 3.333-.417.476-.666.905-.666 1.667" /></svg>
+                </span>
+                <div>
+                  <p class="text-lg font-semibold text-white">Dukungan Penuh</p>
+                  <p class="mt-2 text-sm leading-6 text-slate-400">Kami dampingi dari perencanaan, pengembangan, sampai maintenance setelah rilis.</p>
                 </div>
               </div>
             </div>
@@ -700,6 +927,8 @@
       ).matches;
       let currentMockupIndex = 0;
       let mockupAutoplayId = null;
+      const shouldAutoplayMockups = () =>
+        !prefersReducedMotion && window.innerWidth >= 768;
 
       menuBtn.addEventListener("click", () => {
         const isOpen = mobileMenu.classList.toggle("hidden");
@@ -743,7 +972,10 @@
       };
 
       const startMockupAutoplay = () => {
-        if (prefersReducedMotion) return;
+        if (!shouldAutoplayMockups()) {
+          stopMockupAutoplay();
+          return;
+        }
         stopMockupAutoplay();
         mockupAutoplayId = window.setInterval(() => {
           setMockupSlide(currentMockupIndex + 1);
@@ -769,6 +1001,7 @@
 
       heroMockupTrack.addEventListener("mouseenter", stopMockupAutoplay);
       heroMockupTrack.addEventListener("mouseleave", startMockupAutoplay);
+      window.addEventListener("resize", startMockupAutoplay);
       setMockupSlide(0);
       startMockupAutoplay();
 
